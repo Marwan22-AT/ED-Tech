@@ -113,7 +113,7 @@ const userNameEl = document.getElementById('user-name');
 // ==================== Initialization ====================
 document.addEventListener('DOMContentLoaded', () => {
     // Check if user is logged in (simulated)
-    const savedUser = localStorage.getItem('academy_user');
+    const savedUser = localStorage.getItem('edtech_user');
     if (savedUser) {
         currentUser = JSON.parse(savedUser);
         showMainApp();
@@ -135,7 +135,7 @@ loginForm.addEventListener('submit', (e) => {
             email: email,
             name: email.split('@')[0]
         };
-        localStorage.setItem('academy_user', JSON.stringify(currentUser));
+        localStorage.setItem('edtech_user', JSON.stringify(currentUser));
         showMainApp();
     }
 });
@@ -154,7 +154,7 @@ function showMainApp() {
 }
 
 function logout() {
-    localStorage.removeItem('academy_user');
+    localStorage.removeItem('edtech_user');
     currentUser = null;
     location.reload();
 }
